@@ -1,0 +1,52 @@
+.adminProductImg {
+    width: 100px;
+    height: 100px;
+}
+
+.adminPage {
+    display: flex;
+    height: 100%;
+    height: 87vh;
+}
+.adminSearch {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+}
+.adminList{
+    width: 250px;
+    min-height: 100%;
+   overflow: hidden;
+}
+.adminProductList {
+    overflow-y: auto;
+    height: 85%;
+    padding: 10px 10px 300px 0;
+    margin-bottom: 200px;
+}
+.adminDash {
+    width: 100%;
+    min-height: 100%;
+    overflow-y: auto;
+}
+
+.productListItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px 10px 0;
+    border-bottom: 1px solid darkgray;
+}
+.productListItem > * {
+    margin: 10px;
+}
+
+.addProductButton {
+height: 50px;
+width: 150px;
+font-size: 20px;
+padding: 5px;
+border: 1px solid black;
+}

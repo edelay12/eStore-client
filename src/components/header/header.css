@@ -1,0 +1,53 @@
+.Header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow-y: visible;
+    display: absolute;
+    background: #F6F6F6;
+}
+
+.logoContainer {
+
+    
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: fit-content;
+}
+.navLinks > * {
+    margin-right: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cartFavoritesBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+.shoppingCartContainer {
+    border: 1px solid black;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.shoppingCartMain {
+    z-index: 4;
+    position: fixed;
+    top: 80px;
+    right: 30px;
+}
+

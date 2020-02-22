@@ -1,0 +1,27 @@
+.mainBox {
+display: grid;
+grid-template-columns: .2fr 1fr;
+grid-template-rows: 1fr;
+grid-template-areas: 
+"sidebar products";
+height: 90vh;
+ width: 100vw;
+}
+
+.sidebar-box {
+    padding: 10px;
+grid-area: sidebar;
+overflow-x: auto;
+}
+
+.product-list-box {
+padding: 20px;
+grid-area: products;
+overflow-x: auto;
+}
+
+.pages-box {
+    grid-area: pages;
+
+    border: 1px solid blue;
+}

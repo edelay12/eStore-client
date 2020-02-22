@@ -1,0 +1,19 @@
+.Button {
+  border: 1px solid black;
+  font-size: 18px;
+  padding: 5px 10px;
+  background: none;
+  transition: all .5s ease-in-out;
+}
+
+.Button:hover{
+  background: black;
+  color: white;
+}
+
+.Button:focus {
+  background: #5DBB3C;
+  color: white;
+  outline: none;
+}
+

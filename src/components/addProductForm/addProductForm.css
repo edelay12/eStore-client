@@ -1,0 +1,16 @@
+.addProductForm {
+    display: flex;
+    flex-direction: column;
+justify-content: space-evenly;
+    margin: auto;
+    width: 100%;
+}
+.addProductForm > div {
+    display: flex;
+    margin: 20px;
+}
+
+.addProductForm > div > input {
+    border: 1px solid black;
+    width: 300px;
+}

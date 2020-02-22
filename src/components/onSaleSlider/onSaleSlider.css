@@ -1,0 +1,50 @@
+.onSaleContainer {
+  margin-top: 50px;
+    width: 100vw;
+    height: 300px;
+    position: relative;
+    text-align: center;
+  }
+  a {
+    color: black;
+    letter-spacing: 2px;
+  }
+  #onSaleBanner {
+  width: 80vw;
+   font-size: 28px;
+   font-weight: 500;
+   letter-spacing: 2px;
+   padding: 5px;
+   border-radius: 3px;
+   box-shadow: var(--shadow);
+  }
+  .onSaleSlideContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .onSaleName{
+    font-size: 18px;
+  }
+  .slick-slide img {
+      margin: auto;
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+    } 
+    .slick-slide img:hover  {
+      height: 210px;
+      width: 210px;
+      transition: all 0.1s ease-in-out;
+    } 
+    .slick-slide {
+      height: 100%;
+    }
+  
+
+
+ 
