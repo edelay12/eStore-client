@@ -4,10 +4,12 @@ export default function About(){
     return (
 <>
 Hi, welcome to Java Coffee Shop.
-
-This project was created 
-
+<br />
+This project was created by Evan Miller
+<br />
 To get started: 
+<br />
+- Click register to make an account
 </>
     )
 }

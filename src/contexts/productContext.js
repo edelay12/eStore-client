@@ -28,12 +28,6 @@ export default ProductContext;
 export class ProductsProvider extends Component {
   state = {
     products: [],
-    categories: [{ name :'Tees' , img : ''},
-    { name :'Pants' , img : ''},
-    { name :'Long-sleeve' , img : ''},
-    { name :'Tees' , img : ''},
-    { name :'Tees' , img : ''},
-     'Pants','long-sleeve', 'Shorts', 'Coat/Jacket', 'Shoes'],
     product: nullProduct,
     saleProducts: [],
     error: null,
