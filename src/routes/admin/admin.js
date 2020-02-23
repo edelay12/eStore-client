@@ -21,9 +21,8 @@ export default class Admin extends Component {
     .catch(err => console.log(err));
   }
 
-  handleProduct = p => {
-      this.setState({product : p, addForm : false})
-      console.log(p)
+  handleProduct = product => {
+      this.setState({product : product, addForm : false})
   }
 
   refreshProducts = (products) => {

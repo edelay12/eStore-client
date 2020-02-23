@@ -30,9 +30,6 @@ class App extends Component {
   componentDidMount() {
     ProductApiService.getProducts()
       .then(this.context.setProducts)
-      .then(() => {
-        console.log(this.context.products);
-      })
       .catch(this.context.setError);
 
       IdleService.setIdleCallback(this.logoutFromIdle)

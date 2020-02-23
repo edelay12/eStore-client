@@ -14,7 +14,6 @@ export default class AdminDash extends Component {
 
 
   checkSale =(e) => {
-    console.log(e.currentTarget.value)
     e.currentTarget.value = 'True' ? this.setState({sale : true}) : this.setState({sale : false});
  }
  
@@ -30,7 +29,6 @@ export default class AdminDash extends Component {
  }
 
  deleteItem = (id) => {
-   console.log(id)
   AdminService.deleteProduct(id)
   .then(alert(`item ${id} deleted`))
   .then(() => {
@@ -63,7 +61,6 @@ export default class AdminDash extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     let state = this.state
-console.log('ran')
     //validate fields
     if (state.product_name.value == null || ''  && !state.product_name.value.startsWith(' ')){
         state.product_name.error = true;
@@ -100,10 +97,8 @@ console.log('ran')
         featured : this.state.featured
     } 
   
-    console.log(newProduct)
     const id = this.state.id;
     AdminService.updateProduct(newProduct, id)
-    .then(res => console.log(res))
     .then(() => {
       AdminService.getProducts()
       .then(res => this.props.refreshProducts(res))
@@ -135,7 +130,6 @@ renderCurrentProduct(){
 }
 
 renderEditProduct(){
-console.log(this.state)
 return (
   <section className='newDetails'>
             <h1>Edit Item Details</h1>

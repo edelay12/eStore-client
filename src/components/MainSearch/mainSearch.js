@@ -25,7 +25,6 @@ static contextType = ProductContext;
           .toLowerCase()
           .startsWith(searchTerm.toLowerCase());
       });
-      console.log(results)
       this.setState({ results: results, show: true });
     } else this.setState({ results: [], show: false });
   };

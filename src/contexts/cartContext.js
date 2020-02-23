@@ -42,7 +42,6 @@ export class CartProvider extends Component {
     for (let i in cart) {
       if (product.id == cart[i].product.id) {
         cart[i].quantity++;
-        console.log();
         return this.setState({ cart: cart }, () => {
           this.getTotal();
 
@@ -57,7 +56,6 @@ export class CartProvider extends Component {
 
     TokenService.saveCart(this.state.cart)
    // CartApiService.createCart(cart, 1 )
-    console.log(this.state.cart);
   };
 
   getTotal = () => {
@@ -72,8 +70,6 @@ export class CartProvider extends Component {
 
   updateQuantity = (product, quantity) => {
     //check duplicates
-    console.log('product:' +product)
-    console.log(quantity)
     const newCart = this.state.cart;
     for (let i in newCart) {
       if (product == newCart[i].product.id) {
@@ -91,7 +87,6 @@ export class CartProvider extends Component {
     for (let i in newCart) {
       if (product == newCart[i].product.id) {
     newCart.splice(newCart[i] , 1)
-    console.log(newCart)
     this.setState({cart : newCart})
   }
 }

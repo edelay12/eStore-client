@@ -15,10 +15,9 @@ state = {
 }
   componentDidMount() {
     const { itemId } = this.props.match.params;
-    console.log(itemId)
 ProductApiService.getProduct(itemId)
 .then(this.context.setProduct)
-.catch(err => console.log('error --> '+ err))
+.catch(err => console.log( err))
 .then(this.setState({show : true}))
 //setError
 

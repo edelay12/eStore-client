@@ -76,7 +76,6 @@ handleSubmit = (e) => {
         featured : this.state.featured
     } 
 
-    console.log(newProduct)
     AdminService.createProduct(newProduct)
     .then(() => {
         AdminService.getProducts()

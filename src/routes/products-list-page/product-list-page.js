@@ -20,8 +20,6 @@ export default class ProductListPage extends Component {
      this.setState({ products : products})
    }).then(() => {
     const { collection, value } = this.props.match.params;
-    console.log("collection" + collection);
-    console.log("value" + value);
     if (!collection && !value) return this.filter("all");
     if (collection == "sale") return this.filter("sale");
     if (collection == "featured") return this.filter("featured");
@@ -33,8 +31,6 @@ export default class ProductListPage extends Component {
       this.setState({ products : products})
     }).then(() => {
      const { collection, value } = this.props.match.params;
-     console.log("collection" + collection);
-     console.log("value" + value);
      if (!collection && !value) return this.filter("all");
      if (collection == "sale") return this.filter("sale");
      if (collection == "featured") return this.filter("featured");
@@ -62,14 +58,12 @@ export default class ProductListPage extends Component {
         const sale = this.state.products.filter(product => {
           return product.sale == true;
         });
-        console.log(sale);
         return this.setState({ filter: true, products: sale });
 
       case "featured":
         const featured = this.state.products.filter(product => {
           return product.featured == true;
         });
-        console.log(featured);
         return this.setState({ filter: true, products: featured });
     }
 

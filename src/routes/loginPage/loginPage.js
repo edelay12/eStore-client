@@ -11,7 +11,6 @@ export default class LoginPage extends Component {
     }
   
     handleLoginSuccess = () => {
-      console.log('success')
      window.location.href = '/shop';
     }
   

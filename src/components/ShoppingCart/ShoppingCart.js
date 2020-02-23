@@ -14,7 +14,6 @@ handleCheckout = () => {
 
     render(){
        const {cart , total } = this.context
-       console.log(cart)
         return (
             <form className='shoppingCartForm' onSubmit={this.handleCheckout}>
                 <h1>Shopping Cart</h1>

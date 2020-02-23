@@ -57,7 +57,6 @@ export class ProductsProvider extends Component {
   }
 
   setProduct = product => {
-    console.log('this ---->'+product)
     this.setState({ product })
   }
   clearProduct = () => {

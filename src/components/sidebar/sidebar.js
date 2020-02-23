@@ -5,8 +5,6 @@ import './sidebar.css'
 function Sidebar(props) {
 
 const queParams = (collection , value ) => {
-    console.log(collection)
-    console.log(value)
     props.history.replace(`/shop/collections/${collection.toLowerCase()}/${value.toLowerCase()}`, )
 }
     return (
