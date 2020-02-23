@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import Slider from "react-slick";
 import image1 from './coffee.png'
 import "slick-carousel/slick/slick.css";
@@ -38,6 +39,9 @@ export default class Carousel extends Component {
       <Slider {...settings}>
       <div id='slideContainer'>
            <div id='Background'>
+             <Link to={'/shop/collections'} >
+               <button id='mainShopButton' type='button'>Shop Now</button>
+             </Link>
            </div>
           </div>
           <div id='slideContainer'>
@@ -45,7 +49,7 @@ export default class Carousel extends Component {
           </div>
       <div id='slideContainer'>
             <img id='slidePicture' src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1662&q=80" />
-            <h1 id='slideBanner'>Super Spring Sale!</h1>
+            <h1 id='slideBanner'>Shop our Super Spring Sale!</h1>
           </div>
           <div id='slideContainer'>
             <img  id='slidePicture' src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" />

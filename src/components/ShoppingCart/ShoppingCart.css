@@ -18,6 +18,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    z-index: 10;
+
 }
 .quantiityInput {
     width: 100px;

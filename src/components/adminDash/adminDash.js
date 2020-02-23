@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AdminService from '../../services/admin-api-service';
-import ProductContext from '../../contexts/productContext'
+import './adminDash.css'
+
 export default class AdminDash extends Component {
 
   state = {
@@ -162,7 +163,7 @@ return (
                 {this.state.price.error == true && <h5 style={{color : 'red'}}>Please include a valid price </h5>}
                 <div>
                 <label for='priceInput'>Price: </label>
-                <input type='number' id='priceInput'  defaultValue={this.state.price.value} onChange={(e) => this.setState({price : {value : e.currentTarget.value, error: false}})} />
+                <input type='number' id='priceInput'  step="0.01" min="0" max="100" defaultValue={this.state.price.value} onChange={(e) => this.setState({price : {value : e.currentTarget.value, error: false}})} />
                 </div>
 
                 {this.state.details.error == true && <h5 style={{color : 'red'}}>Please include a valid product details</h5>}

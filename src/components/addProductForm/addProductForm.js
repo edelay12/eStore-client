@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import './addProductForm.css'
 import AdminService from '../../services/admin-api-service';
-import ProductContext from '../../contexts/productContext'
+import ProductContext from '../../Contexts/ProductContext'
 
 export default class AddProductForm extends Component {
     static contextType = ProductContext;
@@ -109,7 +109,7 @@ handleSubmit = (e) => {
                 {this.state.price.error == true && <h5 style={{color : 'red'}}>Please include a valid price </h5>}
                 <div>
                 <label for='priceInput'>Price: </label>
-                <input type='number' id='priceInput' onChange={(e) => this.setState({price : {value : e.currentTarget.value, error: false}})} />
+                <input type='number' id='priceInput' step="0.01" min="0" max="100" onChange={(e) => this.setState({price : {value : e.currentTarget.value, error: false}})} />
                 </div>
 
                 {this.state.details.error == true && <h5 style={{color : 'red'}}>Please include a valid product details</h5>}

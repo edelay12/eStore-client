@@ -4,13 +4,13 @@ import ProductApiService from "../../services/product-api-service";
 import IdleService from '../../services/idle-service'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
-import ProductContext from "../../contexts/productContext";
+import ProductContext from "../../Contexts/ProductContext";
 import PrivateRoute from "../../components/Utils/PrivateRoute"
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
-import Header from "../header/header";
+import Header from "../Header/header";
 import LoginPage from '../../routes/loginPage/loginPage'
 import RegisterForm from '../../routes/registerPage/registerPage'
-import About from "../about/about";
+import About from "../About/about";
 import Shop from "../../routes/shop/shop";
 import ItemPage from "../../routes/itemPage/itemPage";
 import Admin from "../../routes/admin/admin";
@@ -59,19 +59,20 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App__header">
-          <Header products={this.context.products} />
+          <Header products={this.context.products}/>
         </header>
         <main className="App__main">
           {this.state.hasError && (
-            <p className="red">Sorry, there was an error</p>
+            <p className="error">Sorry, there was an error</p>
           )}
           <Switch>
             <Route exact path={'/'} component={About} />
-        
             <PublicOnlyRoute path={'/login'} component={LoginPage} />
             <PublicOnlyRoute path={'/register'} component={RegisterForm} />
             <PrivateRoute exact path={'/shop'} component={Shop} />
             <PrivateRoute exact path={'/shop/collections'} component={ProductListPage} /> 
+            <PrivateRoute exact path={'/shop/collections/:collection'} component={ProductListPage} /> 
+            <PrivateRoute exact path={'/shop/collections/:collection/:value'} component={ProductListPage} /> 
             <PrivateRoute exact path={"/shop/:itemId"} component={ItemPage} /> 
             <PrivateRoute path={"/admin/:adminId"} component={Admin} />
             <Route component={NotFoundPage} />

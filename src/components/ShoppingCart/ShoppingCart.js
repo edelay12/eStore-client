@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CartContext from '../../contexts/cartContext'
+import CartContext from '../../Contexts/CartContext'
 import './ShoppingCart.css'
 import { Button } from '../Utils/Utils';
 import TokenService from '../../services/token-service';

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import ProductContext from "../../contexts/productContext";
+import ProductContext from "../../Contexts/ProductContext";
 import ProductApiService from "../../services/product-api-service";
 import { Link } from 'react-router-dom'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './onSaleSlider.css'
+import './OnSaleSlider.css'
 export default class OnSaleSlider extends Component {
     static contextType = ProductContext;
 

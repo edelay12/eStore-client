@@ -1,5 +1,5 @@
 import React , {Component} from 'react'
-import CartContext from '../../contexts/cartContext'
+import CartContext from '../../Contexts/CartContext'
 import { format as formatDate } from 'date-fns'
 import './Utils.css'
 

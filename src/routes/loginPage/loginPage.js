@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LoginForm from '../../components/loginForm/loginForm'
+import LoginForm from '../../components/LoginForm/loginForm'
 import { Redirect } from 'react-router-dom'
 
 export default class LoginPage extends Component {

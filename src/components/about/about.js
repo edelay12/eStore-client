@@ -3,7 +3,11 @@ import './about.css'
 export default function About(){
     return (
 <>
-about
+Hi, welcome to Java Coffee Shop.
+
+This project was created 
+
+To get started: 
 </>
     )
 }

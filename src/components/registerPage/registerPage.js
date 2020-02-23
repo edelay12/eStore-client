@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Required, Input, Button } from "../../components/Utils/Utils";
+import React, { Component } from './node_modules/react';
+import { Required, Input, Button } from "../Utils/Utils";
 import AuthApiService from '../../services/auth-api-service';
 
 export default class RegisterForm extends Component {

@@ -4,10 +4,10 @@ import { Hyph } from "../Utils/Utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import "./header.css";
-import MainSearch from '../main-search/mainSearch'
+import MainSearch from '../MainSearch/mainSearch'
 import IdleService from '../../services/idle-service'
-import cartContext from '../../contexts/cartContext'
-import ShoppingCart from "../cart/ShoppingCart";
+import cartContext from '../../Contexts/CartContext'
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import TokenService from '../../services/token-service'
 
 export default class Header extends Component {
@@ -44,9 +44,9 @@ export default class Header extends Component {
   renderLoginLink() {
     return (
       <div className="Header__not-logged-in">
-        <Link to="/register">Register</Link>
-        <Hyph />
-        <Link to="/login">Log in</Link>
+        <Link to="/register">Register </Link>
+        / 
+        <Link to="/login"> Log in</Link>
       </div>
     );
   }

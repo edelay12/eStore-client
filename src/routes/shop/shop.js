@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import ProductApiService from "../../services/product-api-service";
-import ProductContext from "../../contexts/productContext";
-import Carousel from "../../components/slider/slider";
-import ShopSeason from "../../components/shopSeason/shopSeason";
-import OnSaleSlider from "../../components/onSaleSlider/onSaleSlider";
+import ProductContext from "../../Contexts/ProductContext";
+import Carousel from "../../components/MainSlider/slider";
+import ShopSeason from "../../components/CategoryButtons/CategoryButtons";
+import OnSaleSlider from "../../components/OnSaleSlider/OnSaleSlider";
 import "./shop.css";
 
 export default class Shop extends Component {

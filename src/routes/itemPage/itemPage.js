@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./itemPage.css";
-import ProductContext from "../../contexts/productContext";
+import ProductContext from "../../Contexts/ProductContext";
 import ProductApiService from '../../services/product-api-service'
 import { AddToCartButton } from "../../components/Utils/Utils";
 

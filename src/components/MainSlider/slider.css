@@ -3,10 +3,12 @@
 height: 500px;
   background: #f8f8f8;
   position: relative;
+  z-index: 1;
 }
 
 .slick-slide img {
     margin: auto;
+    z-index: 1;
   }
 
   #slidePicture {
@@ -14,17 +16,19 @@ height: 500px;
     height: 500px;
     object-fit: cover;
     box-shadow: none;
+    z-index: 1;
   }
 
   #slideContainer {
     position: relative;
-
+    z-index: 1;
   }
 
   #slidePictureMain {
     width: 100%;
     min-height: 500px;
     box-shadow: none;
+    z-index: 1;
   }
 
   #slideBanner {
@@ -34,10 +38,25 @@ height: 500px;
     color: white;
     font-size: 68px;
     text-shadow: var(--shadow);
+    z-index: 1;
   }
 
   #Background{
     background: #F6F6F6;
     width: 100%;
     min-height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  #mainShopButton {
+    font-size: 18px;
+    background: black;
+    color: white;
+    z-index: 1;
+    padding: 5px;
+
   }

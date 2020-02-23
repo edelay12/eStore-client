@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link , withRouter } from 'react-router-dom';
 import ProductApiService from '../../services/product-api-service';
-import ProductContext from '../../contexts/productContext';
+import ProductContext from '../../Contexts/ProductContext';
 import './mainSearch.css'
 
 class MainSearch extends Component {
