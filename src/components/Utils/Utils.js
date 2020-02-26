@@ -7,6 +7,10 @@ export function NiceDate({ date, format='Do MMMM YYYY' }) {
   return formatDate(date, format)
 }
 
+export function FormattedPrice( number ) {
+  return (Math.round(number * 100)/ 100).toFixed(2);
+}
+
 export class AddToCartButton extends Component {
 static contextType = CartContext;
 render(){

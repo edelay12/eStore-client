@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TokenService from '../services/token-service'
+import TokenService from "../services/token-service";
 import CartApiService from "../services/cart-api-service";
 const CartContext = React.createContext({
   error: null,
@@ -8,25 +8,24 @@ const CartContext = React.createContext({
   deleteItem: () => {},
   setError: () => {},
   addToCart: () => {},
-  updateQuantity: () => {},
+  updateQuantity: () => {}
 });
 
 export default CartContext;
 
 export class CartProvider extends Component {
-
   state = {
     error: null,
     total: 0,
     cart: []
   };
 
-//local sto, and remove
+  //local sto, and remove
   setCart = cart => {
     this.setState({ cart }, () => {
       this.getTotal();
     });
-  } 
+  };
 
   setError = error => {
     console.error(error);
@@ -44,7 +43,6 @@ export class CartProvider extends Component {
         cart[i].quantity++;
         return this.setState({ cart: cart }, () => {
           this.getTotal();
-
         });
       }
     }
@@ -53,9 +51,8 @@ export class CartProvider extends Component {
     this.setState({ cart: cart }, () => {
       this.getTotal();
     });
-
-    TokenService.saveCart(this.state.cart)
-   // CartApiService.createCart(cart, 1 )
+    TokenService.saveCart(this.state.cart);
+    // CartApiService.createCart(cart, 1 )
   };
 
   getTotal = () => {
@@ -71,28 +68,29 @@ export class CartProvider extends Component {
   updateQuantity = (product, quantity) => {
     //check duplicates
     const newCart = this.state.cart;
+
     for (let i in newCart) {
       if (product == newCart[i].product.id) {
-        newCart[i].quantity = quantity
-        this.setState({cart : newCart})
-       
+        newCart[i].quantity = parseInt(quantity);
+        this.setState({ cart: newCart });
       }
     }
     this.getTotal();
-    TokenService.saveCart(newCart)
+    TokenService.saveCart(newCart);
   };
 
-  deleteItem(product){
+  deleteItem = product => {
     const newCart = this.state.cart;
     for (let i in newCart) {
       if (product == newCart[i].product.id) {
-    newCart.splice(newCart[i] , 1)
-    this.setState({cart : newCart})
-  }
-}
-this.getTotal();
-TokenService.saveCart(newCart)
-  }
+        let index = newCart.indexOf(newCart[i].product);
+        newCart.splice(index, 1);
+        this.setState({ cart: newCart });
+      }
+    }
+    this.getTotal();
+    TokenService.saveCart(newCart);
+  };
 
   render() {
     const value = {
@@ -102,7 +100,7 @@ TokenService.saveCart(newCart)
       deleteItem: this.deleteItem,
       total: this.state.total,
       addToCart: this.addToCart,
-      updateQuantity : this.updateQuantity
+      updateQuantity: this.updateQuantity
     };
     return (
       <CartContext.Provider value={value}>

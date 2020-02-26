@@ -1,0 +1,45 @@
+.burgerLinks {
+width: 100%;
+height: 400px;
+background: var(--light);
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.navLinksBurger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navLinksBurger > *{
+margin: 20px;
+border-bottom: 1px solid black;
+}
+
+
+
+.Header__not-logged-inMenu{
+display: flex;
+flex-direction: column-reverse;
+align-items: center;
+}
+
+.Header__not-logged-inMenu > *{
+    margin: 15px;
+    }
+
+    .loginLinkMenu {
+        border-bottom:1px solid black ;
+    }
+
+    .logoutLinkMenu {
+        border-bottom:1px solid black ;
+
+    }
+
+    .Header__logged-inMenu {
+        margin-top: 20px;
+    }

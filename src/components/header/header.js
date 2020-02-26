@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Hyph } from "../Utils/Utils";
+import { Hyph, Button } from "../Utils/Utils";
+import Fade from 'react-reveal/Fade'
+import Flip from 'react-reveal/Flip'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faMugHot , faShoppingCart, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import HamburgerMenu from '../HamburgerMenu/HamburgerMenu'
 import "./header.css";
 import MainSearch from '../MainSearch/mainSearch'
 import IdleService from '../../services/idle-service'
@@ -13,7 +16,8 @@ import TokenService from '../../services/token-service'
 export default class Header extends Component {
   static contextType = cartContext;
   state = {
-    showCart: false
+    showCart: false,
+    burgerOpen: false
   };
 
   componentDidMount(){
@@ -44,9 +48,8 @@ export default class Header extends Component {
   renderLoginLink() {
     return (
       <div className="Header__not-logged-in">
-        <Link to="/register">Register </Link>
-        / 
-        <Link to="/login"> Log in</Link>
+        <Link to="/register"><Button>Register</Button></Link>
+        <Link to="/login">Log in</Link>
       </div>
     );
   }
@@ -66,27 +69,38 @@ export default class Header extends Component {
     }
   };
 
+  closeBurgerMenu = () => {
+    this.setState({burgerOpen: false})
+  }
+
   render() {
     return (
       <nav className="Header">
+        {this.state.burgerOpen && (
+                  <Fade down duration={500} opposite>
+        <div className='burgerMenuContainer'>
+          <HamburgerMenu products={this.props.products} close={this.closeBurgerMenu}/>
+        </div>
+        </Fade>
+        )}
         <div className="logoContainer">
-          <h1 className='logo'>
+        <Flip right cascade delay={400} duration={500} spy={this.state.burgerOpen}><span onClick={() => this.setState({ burgerOpen : !this.state.burgerOpen})} className='hamburgerIcon_header'><FontAwesomeIcon icon={this.state.burgerOpen ? faTimes : faBars} /></span></Flip>
             <Link to="/">
-              <FontAwesomeIcon icon={faCoffee} /> JAVA CO
+<FontAwesomeIcon className='logoIcon' icon={faMugHot} /><span className='logo'> Java Coffee</span>
             </Link>
-          </h1>
+        
         </div>
 
         <div className="navLinks">
-          <h1>
+          <span>
             <Link to="/admin/1">Admin</Link>
-          </h1>
-          <h1>
+          </span>
+          <span>
             <Link to="/shop">Shop</Link>
-          </h1>
-          <h1>
+          </span>
+          <span>
             <Link to="/">About</Link>
-          </h1>
+          </span>
           </div>
 
         {TokenService.hasAuthToken() && (
@@ -94,9 +108,9 @@ export default class Header extends Component {
           <div className='searchBox'>
             <MainSearch products={this.props.products}/>
         </div> 
-    
+    <div></div> {/* combine cart and logout   */}
         <div className="cartFavoritesBox">
-          <span onClick={this.showCart}>Cart Icon</span>
+          <span className='cartLogo' onClick={this.showCart}><FontAwesomeIcon icon={faShoppingCart}/> Cart</span>
           {this.state.showCart && (
             <div className='shoppingCartContainer'>
             <div

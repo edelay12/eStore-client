@@ -4,6 +4,7 @@
 justify-content: space-evenly;
     margin: auto;
     width: 100%;
+    background: var(--light);
 }
 .addProductForm > div {
     display: flex;
@@ -11,6 +12,12 @@ justify-content: space-evenly;
 }
 
 .addProductForm > div > input {
-    border: 1px solid black;
+    background: var(--dark);
     width: 300px;
+    color: #F6F6F6;
+    border-radius:  10px;
+    height: 25px;
+    padding-left: 10px;
+    margin-left: 15px;
+    font-size: 18px;
 }

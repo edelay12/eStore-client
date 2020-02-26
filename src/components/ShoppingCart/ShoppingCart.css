@@ -1,13 +1,14 @@
 .shoppingCartForm {
-    height: 80vh;
+    height: 87vh;
+    padding: 10px;
     width: 300px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #f8f8f8;
     overflow-y: auto;
     z-index: 10;
+    box-shadow: 2px 2px 2px 2px rgba(50, 50, 93, 0.05), 2px 2px 2px 2px rgba(50, 50, 93, 0.05), 2px 2px 2px 5px rgba(50, 50, 93, 0.05)
 }
 .shoppingCartForm > * {
     margin-top: 20px;
@@ -19,16 +20,49 @@
     align-items: center;
     justify-content: space-evenly;
     z-index: 10;
-
+    width: 90%;
 }
-.quantiityInput {
+.quantityInput {
     width: 100px;
-    border: 1px solid black;
+    margin-left: 10px;
 }
 
 .cartItem {
-    margin-top: 20px;
+    padding: 30px 0;
+    display: flex; 
+    border-top: 1px solid darkgrey;
+
+}
+
+.cartItem > * {
+    margin: 5px 0;
+}
+.cartTotalArea {
+    padding: 30px 0;
+text-align: center;
+    border-top: 1px solid darkgrey;
+    width: 90%;
+}
+#shoppingCartDelete {
+    background: none;
+    border: none;
 }
 
 
+@media screen and (max-width: 800px) {
 
+    .shoppingCartForm {
+        height: 88vh;
+        padding: 10px;
+        width: 94.5vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #f8f8f8;
+        overflow-y: auto;
+        z-index: 10;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px 2px rgba(50, 50, 93, 0.05), 2px 2px 2px 2px rgba(50, 50, 93, 0.05), 2px 2px 2px 5px rgba(50, 50, 93, 0.05);
+    }
+
+}

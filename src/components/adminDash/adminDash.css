@@ -1,6 +1,100 @@
-#editProductButton, #deleteProductButton  {
-    padding: 5px;
+#editProductButton, #deleteProductButton , #updateProductButton {
+    padding: 5px 20px;
     font-size: 18px;
-    border: 1px solid black;
     margin: 5px;
 }
+
+.updateProductButtonContainer {
+    width: 100%;
+    text-align: center;
+}
+
+#itemImgAdmin , #itemImage {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 10px auto;
+    background: var(--light);
+}
+
+#cancleEditFromButton{
+font-size: 30px;
+color: var(--dark);
+}
+
+.currentProduct {
+    width: 100vw;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+}
+.itemListAdmin {
+    list-style: none;
+    padding: 10px;
+    width: 95%;
+}
+.itemListAdmin > li {
+display: inline;
+margin: 0;
+padding: 5px;
+}
+
+.itemListAdmin > li > h3 {
+    border-bottom: 1px solid darkgray;
+}
+
+#adminListTitleDiv {
+text-align: center;
+width: 100%;
+height: 100%;
+padding: 10px 0;
+margin-bottom: 5px;
+background: var(--light);
+border-top: 1px solid darkgray
+}
+
+#adminListTitle, #editFormLabel{
+border: none;
+padding: 5px;
+margin: 0;
+
+height: 100%;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.newProductForm, .newDetails {
+    background: var(--light);
+}
+.newProductForm > div {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.newProductForm > div  > input {
+background: var(--dark);
+width: 300px;
+color: #F6F6F6;
+border-radius:  10px;
+height: 25px;
+padding-left: 10px;
+margin-left: 15px;
+
+}
+
+
+.newProductForm > div  > textarea {
+    margin-left: 15px;
+    background: var(--dark);
+    width: 80%;
+    color: #F6F6F6;
+    border-radius:  10px;
+    height: 100px;
+    padding-left: 10px;
+    }

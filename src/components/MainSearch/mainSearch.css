@@ -34,13 +34,23 @@ overflow-y: auto;
 
 .mainSearchInput {
     width: 300px;
-    height: 20px;
+    height: 25px;
     border-radius: 15px;
     padding-left: 10px;
+    transition: all .5s ease-in-out;
+
 font-size: 16px;
+border: none;
+color: #F6F6F6;
+background:var(--dark);
+}
+.mainSearchInput:hover {
+    background: black;
+    color: white;
 }
 
 .mainSearchInput::placeholder{
     padding-left: 10px;
+    color: #F6F6F6;
 
 }

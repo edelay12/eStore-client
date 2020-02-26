@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Required, Input, Button } from "../../components/Utils/Utils";
 import AuthApiService from '../../services/auth-api-service';
+import './registerPage.css'
 
 export default class RegisterForm extends Component {
 
@@ -34,6 +35,7 @@ export default class RegisterForm extends Component {
     render(){
         const { error } = this.state
         return (
+          <section className='RegistrationPage'>
            <form
         className='RegistrationForm'
         onSubmit={this.handleSubmit}
@@ -44,7 +46,7 @@ export default class RegisterForm extends Component {
         </div>
             <div className='fullName'>
                 <label htmlFor='registerForm_full_name'>
-                    Full name <Required />
+                    Full name:<Required />{" "}
                 </label>
                 <Input
             name='full_name'
@@ -55,7 +57,7 @@ export default class RegisterForm extends Component {
         </div>
         <div className='userName'>
                 <label htmlFor='registerForm_full_name'>
-                    Username <Required />
+                    Username:<Required />{" "}
                 </label> 
                 <Input
             name='user_name'
@@ -66,7 +68,7 @@ export default class RegisterForm extends Component {
         </div>
         <div className='password'>
           <label htmlFor='RegistrationForm__password'>
-            Password <Required />
+            Password:<Required />{" "}
           </label>
           <Input
             name='password'
@@ -79,6 +81,7 @@ export default class RegisterForm extends Component {
           Register
         </Button>
         </form>
+        </section>
         )
     }
 }

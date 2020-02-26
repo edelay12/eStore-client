@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import { Button } from '../Utils/Utils'
 import AdminService from '../../services/admin-api-service';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+
 import './adminDash.css'
 
 export default class AdminDash extends Component {
@@ -111,20 +115,25 @@ renderCurrentProduct(){
   const  product = this.props.product
   return (
   <section className='currentProduct'>
-  <h3>Current Product Display</h3>
-  <hr />
-  <img id="itemImg" src={product.picture_main} />
-  <h3>Image URL: {product.picture_main}</h3>
-  <h1 id="itemName">Product Name: {product.product_name}</h1>
-  <h3 id="itemRoast">Roast: {product.product_roast}</h3>
-  <h3 id="itemDetails">Details: {product.details}</h3>
-  <h3 id="itemPrice">Price: {product.price}</h3>
-  <h3 id="itemPrice">Origin: {product.origin}</h3>
-  <h3 id="itemPrice">Collection: {product.collection}</h3>
-  <h3 id="itemPrice">Item on sale: {product.sale == true ? 'true' : 'false'}</h3>
-  <h3 id="itemPrice">Item Featured: {product.featured == true ? 'true' : 'false'}</h3>
-  <button id='editProductButton' onClick={this.editItem}>Edit product</button>
-  <button id='deleteProductButton' onClick={() => this.deleteItem(product.id)}>Delete product</button>
+    <div id='adminListTitleDiv'>
+  <h3 id='adminListTitle'>Current Product Display</h3>
+  </div>
+  <img id="itemImgAdmin" src={product.picture_main} />
+  <div className='buttonContainer'>
+  <Button id='editProductButton' onClick={this.editItem}>Edit product</Button>
+  <Button id='deleteProductButton' onClick={() => this.deleteItem(product.id)}>Delete product</Button>
+  </div>
+  <ul className='itemListAdmin'>
+  <li><h3>Image URL:</h3> {product.picture_main}</li>
+  <li id="itemNameAdmin"><h3>Product Name:</h3> {product.product_name}</li>
+  <li id="itemRoastAdmin"><h3>Roast:</h3> {product.product_roast}</li>
+  <li id="itemDetailsAdmin"><h3>Details:</h3> {product.details}</li>
+  <li id="itemPriceAdmin"><h3>Price:</h3> ${product.price}</li>
+  <li id="itemPriceAdmin"><h3>Origin:</h3> {product.origin}</li>
+  <li id="itemPriceAdmin"><h3>Collection:</h3> {product.collection}</li>
+  <li id="itemPriceAdmin"><h3>Item on sale:</h3> {product.sale == true ? 'true' : 'false'}</li>
+  <li id="itemPriceAdmin"><h3>Item Featured:</h3> {product.featured == true ? 'true' : 'false'}</li>
+  </ul>
 </section>
   )
 }
@@ -132,8 +141,10 @@ renderCurrentProduct(){
 renderEditProduct(){
 return (
   <section className='newDetails'>
-            <h1>Edit Item Details</h1>
-            <button onClick={() => this.setState({edit : false})}>Cancel</button>
+            <div id='adminListTitleDiv'>
+            <h3 id='editFormLabel'>Edit Item Details</h3>
+            </div>
+            <button id='cancleEditFromButton' onClick={() => this.setState({edit : false})}><FontAwesomeIcon icon={faTimes} /></button>
           <form className='newProductForm' onSubmit={this.handleSubmit}>
           <img id='itemImage' src={ this.state.img.value || this.props.product.picture_main} />
                   {this.state.img.error == true && <h5 style={{color : 'red'}}>Please include image link that starts with 'https'</h5>}
@@ -163,7 +174,7 @@ return (
                 {this.state.details.error == true && <h5 style={{color : 'red'}}>Please include a valid product details</h5>}
                 <div>
                 <label for='detailsInput'>Product details: </label>
-                <input type='text' id='detailsInput'  defaultValue={this.state.details.value} onChange={(e) => this.setState({details : {value : e.currentTarget.value, error: false}})} />
+                <textarea type='text' id='detailsInput'  defaultValue={this.state.details.value} onChange={(e) => this.setState({details : {value : e.currentTarget.value, error: false}})} />
                 </div>
 
                 {this.state.origin.error == true && <h5 style={{color : 'red'}}>Please include a valid origin</h5>}
@@ -209,8 +220,9 @@ return (
                 <input type='radio' id='featuredInput' name='feautredInput' value='False' defaultChecked onChange={this.checkFeatured} />
                 <label for='featuredInput'> False</label>
                 </div>
-
-                <button type='submit' className='updateProductButton'>Update product</button>
+              <div className='updateProductButtonContainer'>
+                <Button type='submit' className='updateProductButton'>Update product</Button>
+                </div>
             </form>
             </section>
 )

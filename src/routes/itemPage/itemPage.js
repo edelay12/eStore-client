@@ -37,14 +37,22 @@ addToCart = (product) => {
 
     return (
       <React.Fragment>
-          <div>
+          <section className='ItemPage'>
             <img id="itemImg" src={product.picture_main} />
+            <div className='ItemPage_ItemDetails'>
             <h1 id="itemName">{product.product_name}</h1>
-            <h6 id="itemRoast">{product.product_roast}</h6>
-            <h6 id="itemDetails">{product.details}</h6>
-            <h1 id="itemPrice">{product.price}</h1>
-          </div>
-          <AddToCartButton product={product}/>
+            <h3 id="itemRoast">Roast: {product.product_roast}</h3>
+            <h3 id="itemRoast">Origin: {product.origin}</h3>
+            <h4 id="itemDetails">{product.details}</h4>
+            <h3> if on sale</h3>
+            <h3 id="itemPrice">Price: ${product.price}</h3>
+            <div className='ItemPage_addButton'>
+              <AddToCartButton  product={product}/>
+              </div>
+            </div>
+         
+          </section>
+         
       </React.Fragment>
     );
   }

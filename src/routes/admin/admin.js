@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { Button } from '../../components/Utils/Utils'
 import AdminApiService from "../../services/admin-api-service";
 import AdminDash from '../../components/AdminDash/adminDash'
 import "./admin.css";
@@ -52,7 +53,7 @@ export default class Admin extends Component {
             onChange={e => this.handleSearch(e.target.value)}
           />
           </div>
-          <button className='addProductButton' onClick={() => this.setState({addForm: true})}>Add a product</button>
+          <Button className='addProductButton' onClick={() => this.setState({addForm: true})}>Add a product</Button>
           <ul className="adminProductList">
             {this.state.results.map(product => (
               <NavLink to={`/admin/${product.id}`}>

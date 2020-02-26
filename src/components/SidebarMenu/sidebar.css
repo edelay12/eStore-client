@@ -23,6 +23,7 @@
     background: none;
     border: none;
     white-space: nowrap;
+    text-align: left;
 }
 /* rename classes and simplify and clean code */
 .sideBarButton:focus {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Input, Button } from "../Utils/Utils";
 import AuthApiService from '../../services/auth-api-service';
+import './LoginForm.css'
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -36,13 +37,14 @@ export default class LoginForm extends Component {
     const { error } = this.state;
     return (
       <form className="LoginForm" onSubmit={this.handleAuth}>
+        <h2>Log in</h2>
         <div role="alert"> {error && <p className="red"> {error} </p>} </div>{" "}
         <div className="user_name">
-          <label htmlFor="LoginForm__user_name">User name </label>{" "}
+          <label htmlFor="LoginForm__user_name">User name: </label>{" "}
           <Input required name="user_name" id="LoginForm__user_name"></Input>{" "}
         </div>{" "}
         <div className="password">
-          <label htmlFor="LoginFormPassword">Password </label>{" "}
+          <label htmlFor="LoginFormPassword">Password: </label>{" "}
           <Input
             required
             name="password"

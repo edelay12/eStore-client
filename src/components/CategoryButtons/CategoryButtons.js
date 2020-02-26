@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
+import Fade from 'react-reveal/Fade';
 import './CategoryButtons.css'
 
 export default class ShopSeason extends Component {
 
     renderColdCollection() {
         return (
+          <Fade up cascade>
           <div className='itemContainer'>
             <Link
               to='/shop/collections/temp/cold'> {/* /coldbrew */}
@@ -13,11 +15,13 @@ export default class ShopSeason extends Component {
              <h1 className='banner'>Cold Brew</h1>
             </Link>
           </div>
+          </Fade>
         )
       }  
 
       renderHotCollection() {
         return (
+          <Fade up cascade>
           <div className='itemContainer'>
             <Link
               to='/shop/collections/temp/hot'>
@@ -25,6 +29,7 @@ export default class ShopSeason extends Component {
              <h1 className='banner'>Hot Brew</h1>
             </Link>
           </div>
+          </Fade>
         )
       }  
 

@@ -2,21 +2,20 @@ import React from 'react';
 import { Link , withRouter } from 'react-router-dom';
 import './sidebar.css'
 
-function Sidebar(props) {
+function SidebarMenu(props) {
 
 const queParams = (collection , value ) => {
     props.history.replace(`/shop/collections/${collection.toLowerCase()}/${value.toLowerCase()}`, )
 }
     return (
-        <React.Fragment>
-          
+        <div onClick={props.close}>
             <h3 className='collectionLabel'>Collections</h3>
         <section className='sidebar'>
             <div>
          <button className='sidebarButton' name='all'><Link to={'/shop/collections'}>All Brew</Link></button>
         </div>
         <div>
-        <button className='sidebarButton' name='all' value='hot'><Link to={'/shop/collections/sale'}>Sale</Link></button>
+        <button className='sidebarButton' name='all' value='hot'><Link to={'/shop/collections/sale'} id='link'>Sale</Link></button>
         <button className='sidebarButton' name='all' value='hot'><Link to={'/shop/collections/featured'}>Featured</Link></button>
         </div>
         <div className='sidebar-temp'>
@@ -37,8 +36,8 @@ const queParams = (collection , value ) => {
         <button className='sidebarButton' name='roast' onClick={() => queParams('roast', 'dark')} value='dark'>Dark</button>
         </div>
         </section>
-        </React.Fragment>
+        </div>
     )
 }
 
-export default withRouter(Sidebar)
+export default withRouter(SidebarMenu)

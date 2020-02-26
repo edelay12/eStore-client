@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
 import './addProductForm.css'
+import { Button } from '../Utils/Utils'
+
 import AdminService from '../../services/admin-api-service';
 import ProductContext from '../../Contexts/ProductContext'
 
@@ -163,7 +164,7 @@ handleSubmit = (e) => {
                 <label for='featuredInputFalse'> False</label>
                 </div>
 
-                <button type='submit' className='addProductButton'>Add product</button>
+                <Button type='submit' className='addProductButton'>Add product</Button>
             </form>
         )
     }

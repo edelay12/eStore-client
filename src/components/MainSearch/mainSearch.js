@@ -43,12 +43,10 @@ static contextType = ProductContext;
           <div className="mainSearchDropDown">
             <ul className="mainSearchList">
               {this.state.results.map(item => (
-                
                 <li className="mainSearchItem" onClick={() => this.handleProductChange(item.id)}>
                   <img className="mainSearchImg" src={item.picture_main} />
                   <span>{item.product_name}</span>
                 </li>
-                
               ))}
             </ul>
           </div>

@@ -5,11 +5,12 @@
     overflow-y: visible;
     display: absolute;
     background: #F6F6F6;
+height: 8vh;
+font-weight: 900;
 }
 
-.logoContainer {
-
-    
+.cartLogo {
+    cursor: pointer;
 }
 
 .navLinks {
@@ -20,6 +21,7 @@
 }
 .navLinks > * {
     margin-right: 25px;
+    font-weight: 900;
 }
 
 a {
@@ -32,22 +34,75 @@ a {
     flex-direction: column;
     width: 100px;
 }
-.shoppingCartContainer {
-    border: 1px solid black;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
 
+.Header__not-logged-in > a {
+    margin: 0 10px;
 }
 
 .shoppingCartMain {
-    z-index: 4;
+    z-index: 6;
     position: fixed;
-    top: 80px;
-    right: 30px;
+   right: 0;
+margin-top: 30px;
+}
+
+
+.logoIcon {
+    background: var(--dark);
+    color: white;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+.logoContainer{
+    display: flex;
+    align-items: center;
+}
+
+.hamburgerIcon_header {
+    display: none;
+}
+.burgerMenuContainer {
+    width: 100vw;
+    height: 410px;
+    background: var(--dark);
+    z-index: 10;
+    position: fixed;
+    top: 8vh;
+    border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+}
+
+
+
+@media screen and (max-width: 800px) {
+
+    .navLinks {
+        display: none;
+    }
+ 
+    .loginBox {
+        display: none;
+    }
+
+    .logo {
+    }
+
+    .hamburgerIcon_header {
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 24px;
+        padding: 10px;
+    }
+    .searchBox {
+        display: none;
+    }
+  
+    .shoppingCartMain {
+        position: fixed;
+margin-top: 20px;
+    }
+
+  
 }
 

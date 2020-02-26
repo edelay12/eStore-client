@@ -1,9 +1,22 @@
-.Button {
+.Button1 {
   border: 1px solid black;
+
   font-size: 18px;
   padding: 5px 10px;
   background: none;
   transition: all .5s ease-in-out;
+  z-index: 5;
+}
+.Button {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 15px;
+  border: none;
+  background: var(--dark);
+  transition: all .5s ease-in-out;
+  z-index: 5;
+  color: var(--white);
+  border-radius: 6px;
 }
 
 .Button:hover{
@@ -15,5 +28,12 @@
   background: #5DBB3C;
   color: white;
   outline: none;
+}
+
+.Input {
+  background: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 6px;
 }
 

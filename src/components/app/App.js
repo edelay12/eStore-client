@@ -10,7 +10,7 @@ import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import Header from "../Header/header";
 import LoginPage from '../../routes/loginPage/loginPage'
 import RegisterForm from '../../routes/registerPage/registerPage'
-import About from "../About/about";
+import About from "../../routes/About/about";
 import Shop from "../../routes/shop/shop";
 import ItemPage from "../../routes/itemPage/itemPage";
 import Admin from "../../routes/admin/admin";
@@ -65,6 +65,7 @@ class App extends Component {
           {this.state.hasError && (
             <p className="error">Sorry, there was an error</p>
           )}
+
           <Switch>
             <Route exact path={'/'} component={About} />
             <PublicOnlyRoute path={'/login'} component={LoginPage} />
@@ -77,6 +78,7 @@ class App extends Component {
             <PrivateRoute path={"/admin/:adminId"} component={Admin} />
             <Route component={NotFoundPage} />
           </Switch>
+      
         </main>
       </div>
     );
