@@ -1,6 +1,6 @@
 .mainBox {
 display: grid;
-grid-template-columns: .2fr 1fr;
+grid-template-columns: .25fr 1fr;
 grid-template-rows: 1fr;
 grid-template-areas: 
 "sidebar products";
@@ -136,6 +136,7 @@ display: none;
         z-index: 5;
         border-bottom-right-radius: 25px;
         border-bottom-left-radius: 25px;
+        cursor: pointer;
     }
 
     .mainBox {

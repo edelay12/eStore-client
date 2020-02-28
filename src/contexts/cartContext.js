@@ -17,7 +17,8 @@ export class CartProvider extends Component {
   state = {
     error: null,
     total: 0,
-    cart: []
+    cart: [],
+    itemsInCart: 0
   };
 
   //local sto, and remove
@@ -57,12 +58,15 @@ export class CartProvider extends Component {
 
   getTotal = () => {
     let total = 0;
+    let itemsInCart = 0;
     const cart = this.state.cart;
     for (let i in cart) {
       let itemPrice = parseFloat(cart[i].product.price) * cart[i].quantity;
       total += itemPrice;
+      itemsInCart += cart[i].quantity
+      console.log(itemsInCart)
     }
-    this.setState({ total: total });
+    this.setState({ total: total , itemsInCart: itemsInCart});
   };
 
   updateQuantity = (product, quantity) => {
@@ -99,6 +103,7 @@ export class CartProvider extends Component {
       getTotal: this.getTotal,
       deleteItem: this.deleteItem,
       total: this.state.total,
+      itemsInCart: this.state.itemsInCart,
       addToCart: this.addToCart,
       updateQuantity: this.updateQuantity
     };

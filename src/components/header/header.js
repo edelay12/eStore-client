@@ -77,7 +77,7 @@ export default class Header extends Component {
     return (
       <nav className="Header">
         {this.state.burgerOpen && (
-                  <Fade down duration={500} opposite>
+                  <Fade down duration={500}>
         <div className='burgerMenuContainer'>
           <HamburgerMenu products={this.props.products} close={this.closeBurgerMenu}/>
         </div>
@@ -99,7 +99,7 @@ export default class Header extends Component {
             <Link to="/shop">Shop</Link>
           </span>
           <span>
-            <Link to="/">About</Link>
+            <Link to="/about">About</Link>
           </span>
           </div>
 
@@ -110,7 +110,7 @@ export default class Header extends Component {
         </div> 
     <div></div> {/* combine cart and logout   */}
         <div className="cartFavoritesBox">
-          <span className='cartLogo' onClick={this.showCart}><FontAwesomeIcon icon={faShoppingCart}/> Cart</span>
+        <span className={this.context.itemsInCart > 0 ? 'cartNumberShow' : 'cartNumber'}>{this.context.itemsInCart}</span><span className='cartLogo' onClick={this.showCart}><FontAwesomeIcon icon={faShoppingCart}/> Cart</span>
           {this.state.showCart && (
             <div className='shoppingCartContainer'>
             <div

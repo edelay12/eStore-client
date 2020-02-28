@@ -1,11 +1,11 @@
 import config from '../config'
+import TokenService from './token-service'
 
 const AdminApiService = {
   getProducts() {
     return fetch(`${config.API_ENDPOINT}/admin`, {
       headers: {
-          //admin auth
-      },
+        'authorization': `bearer ${TokenService.getAuthToken()}`,      },
     })
       .then(res =>
         (!res.ok)
@@ -17,7 +17,7 @@ const AdminApiService = {
     return fetch(`${config.API_ENDPOINT}/admin`, {
       method: 'POST',
       headers: {
-          //admin auth
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
           'content-type' : 'application/json'
       },
       body: JSON.stringify({

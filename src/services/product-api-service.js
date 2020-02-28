@@ -1,5 +1,6 @@
 //import TokenService from '../services/token-service'
 import config from '../config'
+import TokenService from './token-service'
 
 const ProductApiService = {
   getProducts() {
@@ -17,6 +18,7 @@ const ProductApiService = {
   getSaleProducts() {
     return fetch(`${config.API_ENDPOINT}/shop/sale`, {
       headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>
@@ -28,7 +30,7 @@ const ProductApiService = {
   getProduct(itemId) {
     return fetch(`${config.API_ENDPOINT}/shop/${itemId}`, {
       headers: {
-      //  'authorization': `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>

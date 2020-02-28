@@ -39,6 +39,7 @@ export default class Carousel extends Component {
       ]
     };
     return (
+      
     <div className='container'>
       <Slider {...settings}>
       <div id='slideContainer'>
@@ -55,11 +56,9 @@ export default class Carousel extends Component {
             <img  id='slidePictureMain' src={image1} />
           </div>
           <div id='slideContainerSub' className='circleContainer'>
-          <Link to={'/shop/collections/featured'}>
             <img  id='slidePictureSub' src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" />
             <h1 id='slideBanner'>Send the love of coffee <FontAwesomeIcon icon={faHeart} /></h1>
-            <h4 id='shareLink'><a id='shareLink' href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank">Share Java Coffee</a></h4>
-            </Link>
+            <h4 id='shareLink'><a id='shareLink' href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://estore-app.emiller12.now.sh" target="_blank">Share Java Coffee</a></h4>
           </div>
           <div id='slideContainer'>
            <div id='Background'>

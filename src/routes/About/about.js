@@ -7,13 +7,11 @@ export default function About() {
     <React.Fragment>
       <section className="About">
         <section className="aboutDetails">
-          <h1>Hi, welcome to Java Coffee Shop.</h1>
-          <h4>This project was created by Evan Miller</h4>
 
           <div className="detailsRow">
-            <div className="detailsLeft">
-              <h3 id="center">
-                <u>About this project</u>
+            <div className="detailsRight">
+              <h3 id="centerHeading">
+                <u className='aboutHeading'>About this project</u>
               </h3>
               <p>
                 - This project is a full e-commerce coffee shop (minus payment
@@ -21,12 +19,12 @@ export default function About() {
                 <b>Node</b>, <b>Express</b>, and <b>PostgreSQL</b>. Be sure to
                 use the <b>Admin page</b> to demo the CRUD operations of the
                 site.
-                <h4 id="center">Server</h4>- The site delivers full user
+                <h4 id="centerHeading">Server</h4>- The site delivers full user
                 functionality, with, <b>JWT Tokens</b>, and{" "}
                 <b>JWT Token refresh</b>, registration, secure login, and
                 shopping cart save.
                 <br />
-                All user functions encrypted with proper security measures in
+                All user functions are encrypted with proper security measures in
                 mind. These measures include:
                 <ul>
                   <li>
@@ -42,7 +40,7 @@ export default function About() {
                     Cross Site Scripting (XSS) prevention on product adds and
                     user registration
                   </li>
-                  <li>KnexJS provides built in SQL injection provention</li>
+                  <li>KnexJS provides built in SQL injection prevention</li>
                 </ul>
                 - Protected endpoints are authenticated through a JWT service
                 middleware that checks for the API token in the header provided
@@ -52,33 +50,15 @@ export default function About() {
                 hidden in proper .env files.
                 <br />- Best RESTful practices were used when building the
                 server.
-                <h4 id="center">Client</h4>
+                <h4 id="centerHeading">Client</h4>
                 - The client side uses React Router, with public and private
                 routes.
                 <br />
                 - Context API provides State management.
-                <br />- All testing is done with Jest.
+                <br />- All testing is done with Mocha / Chai.
               </p>
             </div>
-            <div className="detailsRight">
-              <h3 id="center">
-                <u>To get started</u>
-              </h3>
-              <br />
-              - To use the shop, use the demo login below or feel free to
-              register and make a new account:
-              <br />
-              <b>Username: </b>guest
-              <br />
-              <b>Password (case sensitive): </b>Guest2020!<b></b>
-              <br />
-              <br />
-              - Explore the: shop page, the landing page, product collentions
-              page, the individual product page, and the shopping cart.
-              <br />
-              <br />- Use the Admin page to make changes to the store products
-              and see CRUD functions.
-            </div>
+         
           </div>
         </section>
       </section>

@@ -14,6 +14,7 @@ import About from "../../routes/About/about";
 import Shop from "../../routes/shop/shop";
 import ItemPage from "../../routes/itemPage/itemPage";
 import Admin from "../../routes/admin/admin";
+import Welcome from '../../routes/welcomePage/Welcome'
 import NotFoundPage from "../../routes/NotFoundPage/NotFoundPage";
 import ProductListPage from "../../routes/products-list-page/product-list-page";
 import "./App.css";
@@ -67,7 +68,8 @@ class App extends Component {
           )}
 
           <Switch>
-            <Route exact path={'/'} component={About} />
+            <Route exact path={'/'} component={Welcome} />
+            <Route exact path={'/about'} component={About} />
             <PublicOnlyRoute path={'/login'} component={LoginPage} />
             <PublicOnlyRoute path={'/register'} component={RegisterForm} />
             <PrivateRoute exact path={'/shop'} component={Shop} />
