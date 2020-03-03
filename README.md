@@ -13,10 +13,15 @@ Password (case sensitive): Guest2020!
 ```
 - This project is a full e-commerce coffee shop (minus payment for demo purpose) created using **React** , **CSS**, **Node**, **Express**, and **PostgreSQL**. Be sure to use the Admin page to demo the CRUD operations of the site.
 
+![screen 1](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_1.png)
+
+![screen 2](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_2.png)
+
+![screen 3](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_2.png)
 
 
 ## Usage
-### To run the server on a local host:
+### To run the server on a local host: 
 
 ### Scripts
 
