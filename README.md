@@ -1,6 +1,6 @@
 # Java Coffee Shop
 
-This project was created by Evan Miller
+#### This project was created by Evan Miller
 ## To get started
 
 To get started
