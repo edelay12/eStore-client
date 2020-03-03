@@ -4,7 +4,7 @@
   font-size: 18px;
   padding: 5px 10px;
   background: none;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   z-index: 5;
 }
 .Button {
@@ -13,19 +13,19 @@
   padding: 5px 15px;
   border: none;
   background: var(--dark);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   z-index: 5;
   color: var(--white);
   border-radius: 6px;
 }
 
-.Button:hover{
+.Button:hover {
   background: black;
   color: white;
 }
 
 .Button:focus {
-  background: #5DBB3C;
+  background: #5dbb3c;
   color: white;
   outline: none;
 }
@@ -36,4 +36,3 @@
   padding: 5px;
   border-radius: 6px;
 }
-

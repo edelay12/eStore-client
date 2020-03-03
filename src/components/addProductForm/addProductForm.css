@@ -1,23 +1,50 @@
 .addProductForm {
-    display: flex;
-    flex-direction: column;
-justify-content: space-evenly;
-    margin: auto;
-    width: 100%;
-    background: var(--light);
-}
-.addProductForm > div {
-    display: flex;
-    margin: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  background: var(--light);
 }
 
-.addProductForm > div > input {
-    background: var(--dark);
-    width: 300px;
-    color: #F6F6F6;
-    border-radius:  10px;
-    height: 25px;
-    padding-left: 10px;
-    margin-left: 15px;
-    font-size: 18px;
+.addProductForm > div {
+  display: flex;
+  margin: 20px;
+}
+
+.addProductForm > div > input[type="text"] {
+  background: var(--dark);
+  width: 300px;
+  color: #f6f6f6;
+  border-radius: 10px;
+  height: 25px;
+  padding-left: 10px;
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+.addProductForm > div > textarea {
+  margin-left: 15px;
+  background: var(--dark);
+  width: 80%;
+  color: #f6f6f6;
+  border-radius: 10px;
+  height: 100px;
+  padding-left: 10px;
+}
+#priceInput {
+  background: var(--dark);
+  width: 100px;
+  color: #f6f6f6;
+  border-radius: 10px;
+  height: 25px;
+  padding-left: 10px;
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+.addProductForm > div > input[type="radio"] {
+  background: var(--dark);
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }

@@ -1,24 +1,24 @@
 import React, { Component } from "react";
-import { Link , withRouter } from 'react-router-dom';
-import ProductApiService from '../../services/product-api-service';
-import ProductContext from '../../Contexts/ProductContext';
-import './mainSearch.css'
+import { Link, withRouter } from "react-router-dom";
+import ProductApiService from "../../services/product-api-service";
+import ProductContext from "../../Contexts/ProductContext";
+import "./mainSearch.css";
 
 class MainSearch extends Component {
-static contextType = ProductContext;
+  static contextType = ProductContext;
   state = {
     show: false,
     results: []
   };
   handleProductChange = item => {
     ProductApiService.getProduct(item)
-    .then(this.context.setProduct)
-    .catch(err => console.log('error --> '+ err))
-    this.props.history.push(`/shop/${item}`)
-  }
+      .then(this.context.setProduct)
+      .catch(err => console.log(err));
+    this.props.history.push(`/shop/${item}`);
+  };
 
   handleInput = e => {
-    if (!e == ''|| null) {
+    if (!e == "" || null) {
       let searchTerm = e;
       let results = this.props.products.filter(term => {
         return term.product_name
@@ -32,7 +32,7 @@ static contextType = ProductContext;
   render() {
     const { show } = this.state;
     return (
-      <div className='mainSearchContainer'>
+      <div className="mainSearchContainer">
         <input
           type="text"
           className="mainSearchInput"
@@ -43,7 +43,10 @@ static contextType = ProductContext;
           <div className="mainSearchDropDown">
             <ul className="mainSearchList">
               {this.state.results.map(item => (
-                <li className="mainSearchItem" onClick={() => this.handleProductChange(item.id)}>
+                <li
+                  className="mainSearchItem"
+                  onClick={() => this.handleProductChange(item.id)}
+                >
                   <img className="mainSearchImg" src={item.picture_main} />
                   <span>{item.product_name}</span>
                 </li>
@@ -56,4 +59,4 @@ static contextType = ProductContext;
   }
 }
 
-export default withRouter(MainSearch)
+export default withRouter(MainSearch);

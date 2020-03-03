@@ -92,12 +92,17 @@ export default class Header extends Component {
         </div>
 
         <div className="navLinks">
+        {TokenService.hasAuthToken() && (
+          <React.Fragment>
           <span>
             <Link to="/admin/1">Admin</Link>
           </span>
+          
           <span>
             <Link to="/shop">Shop</Link>
           </span>
+          </React.Fragment>
+        )}
           <span>
             <Link to="/about">About</Link>
           </span>

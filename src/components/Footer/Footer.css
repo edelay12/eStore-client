@@ -1,49 +1,45 @@
 .footer {
-    position: fixed;
-    width: 100%;
-    height: 150px;
-    z-index: 0;
-    bottom: 0;
-background: black;
+  position: fixed;
+  width: 100%;
+  height: 150px;
+  z-index: 0;
+  bottom: 0;
+  background: black;
 }
 
 .footerContainer {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: #f6f6f6;
-    width: 100%;
-    height: 100%;
-    letter-spacing: 2px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #f6f6f6;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 2px;
 }
 
 .footerLogo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 2px;
-padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  padding: 5px;
 }
 
 #logoFooterH3 {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
-
 #portfolioLink {
-    text-decoration: none;
-    color: #f6f6f6;
+  text-decoration: none;
+  color: #f6f6f6;
 }
 
 @media screen and (max-width: 800px) {
+  .footerContainer {
+    flex-direction: column;
+  }
 
-    .footerContainer {
-
-        flex-direction: column;
-    }
-
-.footer {
-height: 200px;
-}
-
+  .footer {
+    height: 200px;
+  }
 }

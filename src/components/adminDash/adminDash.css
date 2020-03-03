@@ -1,100 +1,119 @@
-#editProductButton, #deleteProductButton , #updateProductButton {
-    padding: 5px 20px;
-    font-size: 18px;
-    margin: 5px;
+#editProductButton,
+#deleteProductButton,
+#updateProductButton {
+  padding: 5px 20px;
+  font-size: 18px;
+  margin: 5px;
 }
 
 .updateProductButtonContainer {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
-#itemImgAdmin , #itemImage {
-    width: 200px;
-    height: 200px;
-    display: block;
-    margin: 10px auto;
-    background: var(--light);
+#itemImgAdmin,
+#itemImage {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 10px auto;
+  background: var(--light);
 }
 
-#cancleEditFromButton{
-font-size: 30px;
-color: var(--dark);
+#cancleEditFromButton {
+  font-size: 30px;
+  color: var(--dark);
 }
 
 .currentProduct {
-    width: 100vw;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    
+  width: 100vw;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .itemListAdmin {
-    list-style: none;
-    padding: 10px;
-    width: 95%;
+  list-style: none;
+  padding: 10px;
+  width: 95%;
 }
 .itemListAdmin > li {
-display: inline;
-margin: 0;
-padding: 5px;
+  display: inline;
+  margin: 0;
+  padding: 5px;
 }
 
 .itemListAdmin > li > h3 {
-    border-bottom: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
 }
 
 #adminListTitleDiv {
-text-align: center;
-width: 100%;
-height: 100%;
-padding: 10px 0;
-margin-bottom: 5px;
-background: var(--light);
-border-top: 1px solid darkgray
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  margin-bottom: 5px;
+  background: var(--light);
+  border-top: 1px solid darkgray;
 }
 
-#adminListTitle, #editFormLabel{
-border: none;
-padding: 5px;
-margin: 0;
+#adminListTitle,
+#editFormLabel {
+  border: none;
+  padding: 5px;
+  margin: 0;
 
-height: 100%;
+  height: 100%;
 }
 
 .buttonContainer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.newProductForm, .newDetails {
-    background: var(--light);
+.newProductForm,
+.newDetails {
+  background: var(--light);
 }
 .newProductForm > div {
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    justify-content: space-evenly;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
 }
 
-.newProductForm > div  > input {
-background: var(--dark);
-width: 300px;
-color: #F6F6F6;
-border-radius:  10px;
-height: 25px;
-padding-left: 10px;
-margin-left: 15px;
-
+.newProductForm > div > input[type="text"] {
+  background: var(--dark);
+  width: 300px;
+  color: #f6f6f6;
+  border-radius: 10px;
+  height: 25px;
+  padding-left: 10px;
+  margin-left: 15px;
 }
 
+.newProductForm > div > input[type="radio"] {
+  background: var(--dark);
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
 
-.newProductForm > div  > textarea {
-    margin-left: 15px;
-    background: var(--dark);
-    width: 80%;
-    color: #F6F6F6;
-    border-radius:  10px;
-    height: 100px;
-    padding-left: 10px;
-    }
+#SsalePriceInput {
+  background: var(--dark);
+  margin: 10px 0 30px 10px;
+  width: 100px;
+  color: #f6f6f6;
+  height: 25px;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-left: 15px;
+}
+
+.newProductForm > div > textarea {
+  margin-left: 15px;
+  background: var(--dark);
+  width: 80%;
+  color: #f6f6f6;
+  border-radius: 10px;
+  height: 100px;
+  padding-left: 10px;
+}

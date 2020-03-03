@@ -1,24 +1,22 @@
-import config from '../config'
-import TokenService from './token-service'
+import config from "../config";
+import TokenService from "./token-service";
 
 const AdminApiService = {
   getProducts() {
     return fetch(`${config.API_ENDPOINT}/admin`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,      },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
   },
   createProduct(product) {
     return fetch(`${config.API_ENDPOINT}/admin`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-          'content-type' : 'application/json'
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+        "content-type": "application/json"
       },
       body: JSON.stringify({
         product_name: product.product_name,
@@ -30,21 +28,18 @@ const AdminApiService = {
         collection: product.collection,
         sale_price: product.salePrice,
         sale: product.sale,
-        featured: product.featured,
+        featured: product.featured
       })
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
-  }, 
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
   updateProduct(product, id) {
     return fetch(`${config.API_ENDPOINT}/admin/${id}`, {
-      method: 'PATCH',
+      method: "PATCH",
       headers: {
-        'content-type' : 'application/json'
-          //admin auth
+        "content-type": "application/json",
+        authorization: `bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
         product_name: product.product_name,
@@ -56,32 +51,26 @@ const AdminApiService = {
         collection: product.collection,
         sale_price: product.salePrice,
         sale: product.sale,
-        featured: product.featured,
+        featured: product.featured
       })
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
   },
-deleteProduct(id) {
-  return fetch(`${config.API_ENDPOINT}/admin/${id}`, {
-    method: 'DELETE',
-    headers: {
-      'content-type' : 'application/json'
-        //admin auth
-    },
-  })
-    .then(res =>
-      (!res.ok)
-        ? res.json().then(e => Promise.reject(e))
-        : res.json()
-    )
-},
-refreshProducts() {
-  this.getProducts()
-}
-}
+  deleteProduct(id) {
+    return fetch(`${config.API_ENDPOINT}/admin/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  refreshProducts() {
+    this.getProducts();
+  }
+};
 
-export default AdminApiService
+export default AdminApiService;

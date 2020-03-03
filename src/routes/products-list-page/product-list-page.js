@@ -4,9 +4,8 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import SidebarMenu from "../../components/SidebarMenu/Sidebar";
 import ProductContext from "../../Contexts/ProductContext";
 import { Link } from "react-router-dom";
-import Fade from 'react-reveal/Fade'
-import Slide from 'react-reveal/Slide'
-
+import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
 
 import "./product-list-page.css";
 import ProductApiService from "../../services/product-api-service";
@@ -21,7 +20,7 @@ export default class ProductListPage extends Component {
       error: false,
       hovering: false,
       hoveringItem: null,
-      sidebar: false,
+      sidebar: false
     };
   }
   static contextType = ProductContext;
@@ -31,7 +30,7 @@ export default class ProductListPage extends Component {
   };
   handleHoverLeave = () => {
     this.setState({ hovering: false, hoveringItem: null });
-  }
+  };
 
   componentDidMount() {
     ProductApiService.getProducts()
@@ -64,7 +63,7 @@ export default class ProductListPage extends Component {
   }
 
   filter = (collection, value) => {
-  this.setState({setAnimation: !this.state.setAnimation })  
+    this.setState({ setAnimation: !this.state.setAnimation });
     let filter = "";
     switch (collection) {
       case "all":
@@ -104,92 +103,111 @@ export default class ProductListPage extends Component {
 
   render() {
     return (
-<React.Fragment>
-<span id='sideBarToggle1' onClick={() => this.setState({ sidebar : !this.state.sidebar})}>collections</span>
-  {this.state.sidebar && (
-    <Slide left>
-      <div className="sidebar-box-width800">
-      <SidebarMenu close={() => this.setState({sidebar : false})} products={this.state.products} />
-    </div>
-    </Slide>
-    )}
-      <div className="mainBox">
-        <div className="sidebar-box">
-          <Sidebar products={this.state.products} />
-        </div>
-        
-        <div className="product-list-box">
-     
-          <h3 className="productListLabel">
-            Products ({this.state.products.length})
-        
-          </h3>
-          {this.state.error && (
-            <h1 style={{ color: "red" }}>Sorry, there was an error</h1>
-          )}
-          <Fade right cascade spy={this.state.setAnimation}>
-          <section className="productGrid">
-            {this.state.filter == true
-              ? this.state.products.map(product => (
-                  <div className='hoverFrame'>
-                    <div className="main-product-frame">
-                      <Link to={`/shop/${product.id}`}>
-                        <div
-                          className="details-container"
-                          onMouseEnter={() => this.handleHover(product.id)}
-                          onMouseLeave={() => this.handleHoverLeave()}
-                        >
-                          <img
-                            id="product-img"
-                            src={product.picture_main}
-                            alt="mian-product-image"
-                          />
-                          <span id="product-title">{product.product_name}</span>
-                          <span id="product-price">${product.price}</span>
-                          <div className={this.state.hoveringItem == product.id ? 'productDetailsHover' : 'productDetailsHidden'}>
-                          <span>{product.roast}</span>
-                          <span>{product.details}</span>
-                          </div>
+      <React.Fragment>
+        <span
+          id="sideBarToggle1"
+          onClick={() => this.setState({ sidebar: !this.state.sidebar })}
+        >
+          collections
+        </span>
+        {this.state.sidebar && (
+          <Slide left>
+            <div className="sidebar-box-width800">
+              <SidebarMenu
+                close={() => this.setState({ sidebar: false })}
+                products={this.state.products}
+              />
+            </div>
+          </Slide>
+        )}
+        <div className="mainBox">
+          <div className="sidebar-box">
+            <Sidebar products={this.state.products} />
+          </div>
+
+          <div className="product-list-box">
+            <h3 className="productListLabel">
+              Products ({this.state.products.length})
+            </h3>
+            {this.state.error && (
+              <h1 style={{ color: "red" }}>Sorry, there was an error</h1>
+            )}
+            <Fade right cascade spy={this.state.setAnimation}>
+              <section className="productGrid">
+                {this.state.filter == true
+                  ? this.state.products.map(product => (
+                      <div className="hoverFrame">
+                        <div className="main-product-frame">
+                          <Link to={`/shop/${product.id}`}>
+                            <div
+                              className="details-container"
+                              onMouseEnter={() => this.handleHover(product.id)}
+                              onMouseLeave={() => this.handleHoverLeave()}
+                            >
+                              <img
+                                id="product-img"
+                                src={product.picture_main}
+                                alt="mian-product-image"
+                              />
+                              <span id="product-title">
+                                {product.product_name}
+                              </span>
+                              <span id="product-price">${product.price}</span>
+                              <div
+                                className={
+                                  this.state.hoveringItem == product.id
+                                    ? "productDetailsHover"
+                                    : "productDetailsHidden"
+                                }
+                              >
+                                <span>{product.roast}</span>
+                                <span>{product.details}</span>
+                              </div>
+                            </div>
+                          </Link>
+                          <AddToCartButton product={product} />
                         </div>
-                      </Link>
-                      <AddToCartButton product={product} />
-                    </div>
-                   
-                  </div>
-                  
-                ))
-              : this.context.products.map(product => (
-                <div className='hoverFrame'>
-                <div className="main-product-frame">
-                  <Link to={`/shop/${product.id}`}>
-                    <div
-                      className="details-container"
-                      onMouseEnter={() => this.handleHover(product.id)}
-                      onMouseLeave={() => this.handleHoverLeave()}
-                    >
-                      <img
-                        id="product-img"
-                        src={product.picture_main}
-                        alt="mian-product-image"
-                      />
-                      <span id="product-title">{product.product_name}</span>
-                      <span id="product-price">${product.price}</span>
-               
-                      <div className={this.state.hoveringItem == product.id ? 'productDetailsHover' : 'productDetailsHidden'}>
-                      <span>{product.roast}</span>
-                      <span>{product.details}</span>
                       </div>
-                     
-                    </div>
-                  </Link>
-                  <AddToCartButton product={product} />
-                </div>
-              </div>
-            ))}
-          </section>
-          </Fade>
+                    ))
+                  : this.context.products.map(product => (
+                      <div className="hoverFrame">
+                        <div className="main-product-frame">
+                          <Link to={`/shop/${product.id}`}>
+                            <div
+                              className="details-container"
+                              onMouseEnter={() => this.handleHover(product.id)}
+                              onMouseLeave={() => this.handleHoverLeave()}
+                            >
+                              <img
+                                id="product-img"
+                                src={product.picture_main}
+                                alt="mian-product-image"
+                              />
+                              <span id="product-title">
+                                {product.product_name}
+                              </span>
+                              <span id="product-price">${product.price}</span>
+
+                              <div
+                                className={
+                                  this.state.hoveringItem == product.id
+                                    ? "productDetailsHover"
+                                    : "productDetailsHidden"
+                                }
+                              >
+                                <span>{product.roast}</span>
+                                <span>{product.details}</span>
+                              </div>
+                            </div>
+                          </Link>
+                          <AddToCartButton product={product} />
+                        </div>
+                      </div>
+                    ))}
+              </section>
+            </Fade>
+          </div>
         </div>
-      </div>
       </React.Fragment>
     );
   }

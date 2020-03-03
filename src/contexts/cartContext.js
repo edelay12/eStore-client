@@ -21,7 +21,6 @@ export class CartProvider extends Component {
     itemsInCart: 0
   };
 
-  //local sto, and remove
   setCart = cart => {
     this.setState({ cart }, () => {
       this.getTotal();
@@ -53,7 +52,6 @@ export class CartProvider extends Component {
       this.getTotal();
     });
     TokenService.saveCart(this.state.cart);
-    // CartApiService.createCart(cart, 1 )
   };
 
   getTotal = () => {
@@ -63,10 +61,10 @@ export class CartProvider extends Component {
     for (let i in cart) {
       let itemPrice = parseFloat(cart[i].product.price) * cart[i].quantity;
       total += itemPrice;
-      itemsInCart += cart[i].quantity
-      console.log(itemsInCart)
+      itemsInCart += cart[i].quantity;
+      console.log(itemsInCart);
     }
-    this.setState({ total: total , itemsInCart: itemsInCart});
+    this.setState({ total: total, itemsInCart: itemsInCart });
   };
 
   updateQuantity = (product, quantity) => {

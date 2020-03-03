@@ -1,0 +1,60 @@
+.differenceSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 650px;
+}
+
+.differenceImage {
+  width: 600px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.differenceBannerContainer {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.differenceSub {
+  width: 500px;
+  font-size: 24px;
+}
+
+.differenceBanner {
+  font-size: 38px;
+}
+
+.differenceImageContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+@media screen and (max-width: 880px) {
+  .differenceSection {
+    flex-direction: column;
+  }
+
+  .differenceSub {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .differenceBanner {
+    font-size: 24px;
+  }
+
+  .differenceImage {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+  }
+}

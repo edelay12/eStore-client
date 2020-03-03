@@ -4,9 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-self: center;
+  align-items: center;
   background: var(--white);
-  padding: 80px 0;
 }
 
 .featureContainer {
@@ -44,5 +43,8 @@
 @media screen and (max-width: 800px) {
   .shopMain {
     margin-bottom: 200px;
+  }
+  #shopFeature_deathwish {
+    object-fit: stretch;
   }
 }

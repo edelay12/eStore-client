@@ -7,11 +7,10 @@ export default function About() {
     <React.Fragment>
       <section className="About">
         <section className="aboutDetails">
-
           <div className="detailsRow">
             <div className="detailsRight">
               <h3 id="centerHeading">
-                <u className='aboutHeading'>About this project</u>
+                <u className="aboutHeading">About this project</u>
               </h3>
               <p>
                 - This project is a full e-commerce coffee shop (minus payment
@@ -24,8 +23,8 @@ export default function About() {
                 <b>JWT Token refresh</b>, registration, secure login, and
                 shopping cart save.
                 <br />
-                All user functions are encrypted with proper security measures in
-                mind. These measures include:
+                All user functions are encrypted with proper security measures
+                in mind. These measures include:
                 <ul>
                   <li>
                     JWT Tokens and Refresh are issued securly, while expiring
@@ -58,7 +57,6 @@ export default function About() {
                 <br />- All testing is done with Mocha / Chai.
               </p>
             </div>
-         
           </div>
         </section>
       </section>

@@ -2,20 +2,19 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   --shadow: 0 50px 100px rgba(50, 50, 93, 0.05),
     0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark: #505050;
-  --light:#F6F6F6;
+  --light: #f6f6f6;
   --white: #ffffff;
   background: var(--light);
-  
-  }
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 

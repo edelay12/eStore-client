@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-height: 500px;
+  height: 500px;
   background: #f8f8f8;
   position: relative;
   z-index: 2;
@@ -8,122 +8,116 @@ height: 500px;
 }
 
 .slick-slide img {
-    margin: auto;
-    z-index: 1;
-    z-index: 2;
-  }
+  margin: auto;
+  z-index: 1;
+  z-index: 2;
+}
 
-  #slidePicture {
-    width: 99%;
-    height: 500px;
-    object-fit: cover;
-    box-shadow: none;
-    z-index: 2;
-    border-radius: 10px;
-  }
-  #slidePictureSub {
-    width: 400px;
-    height: 400px;
-    margin-top: 20px;
-    box-shadow: none;
-    z-index: 2;
-    border-radius: 100%;
-  }
-  .circleContainer {
-    border-radius: 50% !important;
-  }
-  #slideContainer {
-    position: relative;
-    z-index: 1;
-  }
+#slidePicture {
+  width: 99%;
+  height: 500px;
+  object-fit: cover;
+  box-shadow: none;
+  z-index: 2;
+  border-radius: 10px;
+}
+#slidePictureSub {
+  width: 400px;
+  height: 400px;
+  margin-top: 20px;
+  box-shadow: none;
+  z-index: 2;
+  border-radius: 100%;
+}
+.circleContainer {
+  border-radius: 50% !important;
+}
+#slideContainer {
+  position: relative;
+  z-index: 1;
+}
 
-  #slideContainerSub {
-    position: relative;
-    z-index: 1;
-    border-radius: 50%;
-  }
-  #slidePictureMain {
-    width: 100%;
-    min-height: 500px;
-    box-shadow: none;
-    z-index: 1;
-  }
+#slideContainerSub {
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+}
 
-  #slideBanner {
-    position: absolute;
-    top: 45px;
-    text-align: center;
-    color: black;
-    font-size: 42px;
-    padding: 40px;
-    text-shadow: var(--shadow);
-    z-index: 1;
-    font-weight: 700;
-  }
+#slidePictureMain {
+  width: 100%;
+  min-height: 500px;
+  box-shadow: none;
+  z-index: 1;
+}
 
-  #shareLink {
-    text-align: center;
-    font-size: 18px;
-    color: #505050;
-    font-weight: 700;
-    padding: 10px 0 0 0;
-    width: 100%;
-    z-index: 2;
-  }
-  #Background{
-    background: #F6F6F6;
-    width: 100%;
-    min-height: 500px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-  }
+#slideBanner {
+  position: absolute;
+  top: 45px;
+  text-align: center;
+  color: black;
+  font-size: 42px;
+  padding: 40px;
+  text-shadow: var(--shadow);
+  z-index: 1;
+  font-weight: 700;
+}
 
-  #mainShopButton {
-    font-size: 20px;
-    background: black;
-    color: white;
-    z-index: 1;
-    padding: 15px 40px;
-    font-weight: 700;
-  }
+#shareLink {
+  text-align: center;
+  font-size: 18px;
+  color: #505050;
+  font-weight: 700;
+  padding: 10px 0 0 0;
+  width: 100%;
+  z-index: 2;
+}
+#Background {
+  background: #f6f6f6;
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
 
-  #heroBanner {
-    font-size: 48px;
-    font-weight: 700;
+#mainShopButton {
+  font-size: 20px;
+  background: black;
+  color: white;
+  z-index: 1;
+  padding: 15px 40px;
+  font-weight: 700;
+}
 
-  }
+#heroBanner {
+  font-size: 48px;
+  font-weight: 700;
+}
 
-  #heroSubBanner {
-    font-size: 18px;
-    color: #505050;
-    font-weight: 700;
+#heroSubBanner {
+  font-size: 18px;
+  color: #505050;
+  font-weight: 700;
+}
 
-  }
+#mainSlideContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  z-index: 1;
+}
 
-  #mainSlideContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 80%;
-    z-index: 1;
-  }
+#mainSlideContainer > * {
+  margin: 15px;
+}
 
-  #mainSlideContainer > *{
-    margin: 15px;
-  }
-
-
-
-  @media screen and (max-width: 650px) {
-
+@media screen and (max-width: 650px) {
   #slidePictureSub {
     width: 350px;
     height: 350px;
-
   }
-
 }

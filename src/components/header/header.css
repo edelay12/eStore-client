@@ -1,118 +1,113 @@
 .Header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    overflow-y: visible;
-    display: absolute;
-    background: #F6F6F6;
-height: 8vh;
-font-weight: 900;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow-y: visible;
+  display: absolute;
+  background: #f6f6f6;
+  height: 8vh;
+  font-weight: 900;
 }
 
 .cartLogo {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .navLinks {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: fit-content;
 }
 .navLinks > * {
-    margin-right: 25px;
-    font-weight: 900;
+  margin-right: 25px;
+  font-weight: 900;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .cartFavoritesBox {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100px;
 }
 
 .Header__not-logged-in > a {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .shoppingCartMain {
-    z-index: 6;
-    position: fixed;
-   right: 0;
-margin-top: 40px;
+  z-index: 6;
+  position: fixed;
+  right: 0;
+  margin-top: 40px;
 }
-
 
 .logoIcon {
-    background: var(--dark);
-    color: white;
-    padding: 5px;
-    border-radius: 100%;
+  background: var(--dark);
+  color: white;
+  padding: 5px;
+  border-radius: 100%;
 }
 
-.logoContainer{
-    display: flex;
-    align-items: center;
+.logoContainer {
+  display: flex;
+  align-items: center;
 }
 
 .hamburgerIcon_header {
-    display: none;
+  display: none;
 }
 .burgerMenuContainer {
-    width: 100vw;
-    height: 410px;
-    background: var(--dark);
-    z-index: 10;
-    position: fixed;
-    top: 8vh;
-    border-bottom-right-radius: 20px;
-border-bottom-left-radius: 20px;
+  width: 100vw;
+  height: 410px;
+  background: var(--dark);
+  z-index: 10;
+  position: fixed;
+  top: 8vh;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 .cartNumberShow {
-position: absolute;
-color: black;
-left: 0;
-top: -7px;
-z-index: 2;
-border-radius: 50%;
-background: rgb(255, 66, 66);
-padding: 1px 5px;
-font-size: 12px;
+  position: absolute;
+  color: black;
+  left: 0;
+  top: -7px;
+  z-index: 2;
+  border-radius: 50%;
+  background: rgb(255, 66, 66);
+  padding: 1px 5px;
+  font-size: 12px;
 }
 
 .cartNumber {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 800px) {
+  .navLinks {
+    display: none;
+  }
 
-    .navLinks {
-        display: none;
-    }
- 
-    .loginBox {
-        display: none;
-    }
+  .loginBox {
+    display: none;
+  }
 
-    .hamburgerIcon_header {
-        display: inline-block;
-        margin-right: 10px;
-        font-size: 24px;
-        padding: 10px;
-    }
-    .searchBox {
-        display: none;
-    }
-  
-    .shoppingCartMain {
-        position: fixed;
-margin-top: 20px;
-    }
+  .hamburgerIcon_header {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px;
+    padding: 10px;
+  }
+  .searchBox {
+    display: none;
+  }
 
-  
+  .shoppingCartMain {
+    position: fixed;
+    margin-top: 20px;
+  }
 }
-
