@@ -17,7 +17,7 @@ Password (case sensitive): Guest2020!
 
 ![screen 2](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_2.png)
 
-![screen 3](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_2.png)
+![screen 3](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_3.png)
 
 
 ## Usage
