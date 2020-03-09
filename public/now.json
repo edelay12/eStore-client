@@ -1,8 +1,11 @@
 {
     "version": 2,
+    "alias": "emiller12-estore-app",
     "name": "estore-app",
     "routes": [
         { "handle": "filesystem" },
         { "src": "/.*", "dest": "/index.html" }
     ]
   }
+
+  

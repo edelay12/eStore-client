@@ -15,8 +15,8 @@ export default class Carousel extends Component {
       dots: false,
       arrows: false,
       autoplay: true,
-      autoPlaySpeed: 3000,
-      speed: 500,
+      autoplaySpeed: 7000,
+      speed: 2000,
       slidesToShow: 2,
       slidesToScroll: 2,
       responsive: [
@@ -24,7 +24,9 @@ export default class Carousel extends Component {
           breakpoint: 1024,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 2
+            slidesToScroll: 2,
+            autoplaySpeed: 7000,
+            speed: 2000,
           }
         },
         {
@@ -32,6 +34,8 @@ export default class Carousel extends Component {
           settings: {
             slidesToShow: 1,
             vertical: true,
+            autoplaySpeed: 7000,
+            speed: 2000,
             slidesToScroll: 1,
             initialSlide: 1
           }

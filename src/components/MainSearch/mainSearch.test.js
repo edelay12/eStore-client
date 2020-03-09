@@ -1,14 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import ReactDOM from "react-dom";
 
-test("renders without crashing", () => {
+import MainSearch from "./mainSearch";
+
+it("renders without crashing", () => {
   const div = document.createElement("div");
+
   ReactDOM.render(
     <BrowserRouter>
-      <App />{" "}
+      <MainSearch />
     </BrowserRouter>,
     div
   );
+
+  ReactDOM.unmountComponentAtNode(div);
 });

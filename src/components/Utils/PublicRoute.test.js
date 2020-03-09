@@ -1,14 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
 
-test("renders without crashing", () => {
+import ReactDOM from "react-dom";
+
+import PublicOnlyRoute from "./PublicOnlyRoute";
+
+it("renders without crashing", () => {
   const div = document.createElement("div");
+
   ReactDOM.render(
     <BrowserRouter>
-      <App />{" "}
+      <PublicOnlyRoute />
     </BrowserRouter>,
     div
   );
+
+  ReactDOM.unmountComponentAtNode(div);
 });
